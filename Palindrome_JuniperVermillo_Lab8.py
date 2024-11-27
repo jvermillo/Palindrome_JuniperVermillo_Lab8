@@ -11,12 +11,17 @@ def input_word():
         word = input("Please input a word: ")
     return word
 
-def is_palindrome(word):
+def is_palindrome(user_input):
     """Creates a reversed version of the inputted word, then compares the two if they are different or the same"""
-    reversed_word = ""
+    word = []
+    reversed_word = []
+
+    for i in range(len(user_input)):
+        if user_input[i].isalpha() == True:
+            word += user_input[i]
     for i in range(len(word)):
         reversed_word += word[(len(word) - 1) - i]
-    if reversed_word.lower() == word.lower():
+    if str(reversed_word).lower() == str(word).lower():
         return True
     else:
         return False
